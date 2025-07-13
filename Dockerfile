@@ -1,6 +1,6 @@
 FROM golang:1.19 AS builder
 
-COPY kratos-admin-demo /src
+COPY admin /src
 WORKDIR /src
 
 RUN GOPROXY=https://goproxy.cn make build

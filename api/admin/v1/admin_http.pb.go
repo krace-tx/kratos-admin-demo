@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-http v2.8.4
 // - protoc             v3.21.12
-// source: api/admin/v1/auth.proto
+// source: admin/v1/admin.proto
 
 package v1
 
@@ -19,11 +19,11 @@ var _ = binding.EncodeURL
 
 const _ = http.SupportPackageIsVersion1
 
-const OperationAuthLogin = "/api.admin.v1.Auth/Login"
-const OperationAuthRefresh = "/api.admin.v1.Auth/Refresh"
-const OperationAuthRegister = "/api.admin.v1.Auth/Register"
+const OperationAdminLogin = "/admin.v1.Admin/Login"
+const OperationAdminRefresh = "/admin.v1.Admin/Refresh"
+const OperationAdminRegister = "/admin.v1.Admin/Register"
 
-type AuthHTTPServer interface {
+type AdminHTTPServer interface {
 	// Login Login 登录账号
 	Login(context.Context, *LoginRequest) (*LoginReply, error)
 	// Refresh RefreshToken 刷新 AccessToken
@@ -32,14 +32,14 @@ type AuthHTTPServer interface {
 	Register(context.Context, *RegisterRequest) (*RegisterReply, error)
 }
 
-func RegisterAuthHTTPServer(s *http.Server, srv AuthHTTPServer) {
+func RegisterAdminHTTPServer(s *http.Server, srv AdminHTTPServer) {
 	r := s.Route("/")
-	r.POST("/register", _Auth_Register0_HTTP_Handler(srv))
-	r.POST("/login", _Auth_Login0_HTTP_Handler(srv))
-	r.POST("/refresh", _Auth_Refresh0_HTTP_Handler(srv))
+	r.POST("/register", _Admin_Register0_HTTP_Handler(srv))
+	r.POST("/login", _Admin_Login0_HTTP_Handler(srv))
+	r.POST("/refresh", _Admin_Refresh0_HTTP_Handler(srv))
 }
 
-func _Auth_Register0_HTTP_Handler(srv AuthHTTPServer) func(ctx http.Context) error {
+func _Admin_Register0_HTTP_Handler(srv AdminHTTPServer) func(ctx http.Context) error {
 	return func(ctx http.Context) error {
 		var in RegisterRequest
 		if err := ctx.Bind(&in); err != nil {
@@ -48,7 +48,7 @@ func _Auth_Register0_HTTP_Handler(srv AuthHTTPServer) func(ctx http.Context) err
 		if err := ctx.BindQuery(&in); err != nil {
 			return err
 		}
-		http.SetOperation(ctx, OperationAuthRegister)
+		http.SetOperation(ctx, OperationAdminRegister)
 		h := ctx.Middleware(func(ctx context.Context, req interface{}) (interface{}, error) {
 			return srv.Register(ctx, req.(*RegisterRequest))
 		})
@@ -61,7 +61,7 @@ func _Auth_Register0_HTTP_Handler(srv AuthHTTPServer) func(ctx http.Context) err
 	}
 }
 
-func _Auth_Login0_HTTP_Handler(srv AuthHTTPServer) func(ctx http.Context) error {
+func _Admin_Login0_HTTP_Handler(srv AdminHTTPServer) func(ctx http.Context) error {
 	return func(ctx http.Context) error {
 		var in LoginRequest
 		if err := ctx.Bind(&in); err != nil {
@@ -70,7 +70,7 @@ func _Auth_Login0_HTTP_Handler(srv AuthHTTPServer) func(ctx http.Context) error 
 		if err := ctx.BindQuery(&in); err != nil {
 			return err
 		}
-		http.SetOperation(ctx, OperationAuthLogin)
+		http.SetOperation(ctx, OperationAdminLogin)
 		h := ctx.Middleware(func(ctx context.Context, req interface{}) (interface{}, error) {
 			return srv.Login(ctx, req.(*LoginRequest))
 		})
@@ -83,7 +83,7 @@ func _Auth_Login0_HTTP_Handler(srv AuthHTTPServer) func(ctx http.Context) error 
 	}
 }
 
-func _Auth_Refresh0_HTTP_Handler(srv AuthHTTPServer) func(ctx http.Context) error {
+func _Admin_Refresh0_HTTP_Handler(srv AdminHTTPServer) func(ctx http.Context) error {
 	return func(ctx http.Context) error {
 		var in RefreshRequest
 		if err := ctx.Bind(&in); err != nil {
@@ -92,7 +92,7 @@ func _Auth_Refresh0_HTTP_Handler(srv AuthHTTPServer) func(ctx http.Context) erro
 		if err := ctx.BindQuery(&in); err != nil {
 			return err
 		}
-		http.SetOperation(ctx, OperationAuthRefresh)
+		http.SetOperation(ctx, OperationAdminRefresh)
 		h := ctx.Middleware(func(ctx context.Context, req interface{}) (interface{}, error) {
 			return srv.Refresh(ctx, req.(*RefreshRequest))
 		})
@@ -105,25 +105,25 @@ func _Auth_Refresh0_HTTP_Handler(srv AuthHTTPServer) func(ctx http.Context) erro
 	}
 }
 
-type AuthHTTPClient interface {
+type AdminHTTPClient interface {
 	Login(ctx context.Context, req *LoginRequest, opts ...http.CallOption) (rsp *LoginReply, err error)
 	Refresh(ctx context.Context, req *RefreshRequest, opts ...http.CallOption) (rsp *LoginReply, err error)
 	Register(ctx context.Context, req *RegisterRequest, opts ...http.CallOption) (rsp *RegisterReply, err error)
 }
 
-type AuthHTTPClientImpl struct {
+type AdminHTTPClientImpl struct {
 	cc *http.Client
 }
 
-func NewAuthHTTPClient(client *http.Client) AuthHTTPClient {
-	return &AuthHTTPClientImpl{client}
+func NewAdminHTTPClient(client *http.Client) AdminHTTPClient {
+	return &AdminHTTPClientImpl{client}
 }
 
-func (c *AuthHTTPClientImpl) Login(ctx context.Context, in *LoginRequest, opts ...http.CallOption) (*LoginReply, error) {
+func (c *AdminHTTPClientImpl) Login(ctx context.Context, in *LoginRequest, opts ...http.CallOption) (*LoginReply, error) {
 	var out LoginReply
 	pattern := "/login"
 	path := binding.EncodeURL(pattern, in, false)
-	opts = append(opts, http.Operation(OperationAuthLogin))
+	opts = append(opts, http.Operation(OperationAdminLogin))
 	opts = append(opts, http.PathTemplate(pattern))
 	err := c.cc.Invoke(ctx, "POST", path, in, &out, opts...)
 	if err != nil {
@@ -132,11 +132,11 @@ func (c *AuthHTTPClientImpl) Login(ctx context.Context, in *LoginRequest, opts .
 	return &out, nil
 }
 
-func (c *AuthHTTPClientImpl) Refresh(ctx context.Context, in *RefreshRequest, opts ...http.CallOption) (*LoginReply, error) {
+func (c *AdminHTTPClientImpl) Refresh(ctx context.Context, in *RefreshRequest, opts ...http.CallOption) (*LoginReply, error) {
 	var out LoginReply
 	pattern := "/refresh"
 	path := binding.EncodeURL(pattern, in, false)
-	opts = append(opts, http.Operation(OperationAuthRefresh))
+	opts = append(opts, http.Operation(OperationAdminRefresh))
 	opts = append(opts, http.PathTemplate(pattern))
 	err := c.cc.Invoke(ctx, "POST", path, in, &out, opts...)
 	if err != nil {
@@ -145,11 +145,11 @@ func (c *AuthHTTPClientImpl) Refresh(ctx context.Context, in *RefreshRequest, op
 	return &out, nil
 }
 
-func (c *AuthHTTPClientImpl) Register(ctx context.Context, in *RegisterRequest, opts ...http.CallOption) (*RegisterReply, error) {
+func (c *AdminHTTPClientImpl) Register(ctx context.Context, in *RegisterRequest, opts ...http.CallOption) (*RegisterReply, error) {
 	var out RegisterReply
 	pattern := "/register"
 	path := binding.EncodeURL(pattern, in, false)
-	opts = append(opts, http.Operation(OperationAuthRegister))
+	opts = append(opts, http.Operation(OperationAdminRegister))
 	opts = append(opts, http.PathTemplate(pattern))
 	err := c.cc.Invoke(ctx, "POST", path, in, &out, opts...)
 	if err != nil {

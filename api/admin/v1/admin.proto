@@ -1,12 +1,12 @@
 syntax = "proto3";
 
-package api.admin.v1;
+package admin.v1;
 
 import "google/api/annotations.proto";
 
-option go_package = "kratos-admin-demo/api/admin/v1;v1";
+option go_package = "admin/api/admin/v1;v1";
 
-service Auth {
+service Admin {
   // Register 注册账号
   rpc Register(RegisterRequest) returns (RegisterReply) {
     option (google.api.http) = {

@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.6
 // 	protoc        v3.21.12
-// source: api/admin/v1/auth.proto
+// source: admin/v1/admin.proto
 
 package v1
 
@@ -34,7 +34,7 @@ type RegisterRequest struct {
 
 func (x *RegisterRequest) Reset() {
 	*x = RegisterRequest{}
-	mi := &file_api_admin_v1_auth_proto_msgTypes[0]
+	mi := &file_admin_v1_admin_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -46,7 +46,7 @@ func (x *RegisterRequest) String() string {
 func (*RegisterRequest) ProtoMessage() {}
 
 func (x *RegisterRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_api_admin_v1_auth_proto_msgTypes[0]
+	mi := &file_admin_v1_admin_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -59,7 +59,7 @@ func (x *RegisterRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegisterRequest.ProtoReflect.Descriptor instead.
 func (*RegisterRequest) Descriptor() ([]byte, []int) {
-	return file_api_admin_v1_auth_proto_rawDescGZIP(), []int{0}
+	return file_admin_v1_admin_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *RegisterRequest) GetUsername() string {
@@ -99,7 +99,7 @@ type RegisterReply struct {
 
 func (x *RegisterReply) Reset() {
 	*x = RegisterReply{}
-	mi := &file_api_admin_v1_auth_proto_msgTypes[1]
+	mi := &file_admin_v1_admin_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -111,7 +111,7 @@ func (x *RegisterReply) String() string {
 func (*RegisterReply) ProtoMessage() {}
 
 func (x *RegisterReply) ProtoReflect() protoreflect.Message {
-	mi := &file_api_admin_v1_auth_proto_msgTypes[1]
+	mi := &file_admin_v1_admin_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -124,7 +124,7 @@ func (x *RegisterReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegisterReply.ProtoReflect.Descriptor instead.
 func (*RegisterReply) Descriptor() ([]byte, []int) {
-	return file_api_admin_v1_auth_proto_rawDescGZIP(), []int{1}
+	return file_admin_v1_admin_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *RegisterReply) GetId() string {
@@ -145,7 +145,7 @@ type LoginRequest struct {
 
 func (x *LoginRequest) Reset() {
 	*x = LoginRequest{}
-	mi := &file_api_admin_v1_auth_proto_msgTypes[2]
+	mi := &file_admin_v1_admin_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -157,7 +157,7 @@ func (x *LoginRequest) String() string {
 func (*LoginRequest) ProtoMessage() {}
 
 func (x *LoginRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_api_admin_v1_auth_proto_msgTypes[2]
+	mi := &file_admin_v1_admin_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -170,7 +170,7 @@ func (x *LoginRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LoginRequest.ProtoReflect.Descriptor instead.
 func (*LoginRequest) Descriptor() ([]byte, []int) {
-	return file_api_admin_v1_auth_proto_rawDescGZIP(), []int{2}
+	return file_admin_v1_admin_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *LoginRequest) GetUsername() string {
@@ -205,7 +205,7 @@ type LoginReply struct {
 
 func (x *LoginReply) Reset() {
 	*x = LoginReply{}
-	mi := &file_api_admin_v1_auth_proto_msgTypes[3]
+	mi := &file_admin_v1_admin_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -217,7 +217,7 @@ func (x *LoginReply) String() string {
 func (*LoginReply) ProtoMessage() {}
 
 func (x *LoginReply) ProtoReflect() protoreflect.Message {
-	mi := &file_api_admin_v1_auth_proto_msgTypes[3]
+	mi := &file_admin_v1_admin_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -230,7 +230,7 @@ func (x *LoginReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LoginReply.ProtoReflect.Descriptor instead.
 func (*LoginReply) Descriptor() ([]byte, []int) {
-	return file_api_admin_v1_auth_proto_rawDescGZIP(), []int{3}
+	return file_admin_v1_admin_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *LoginReply) GetAccessToken() string {
@@ -263,7 +263,7 @@ type RefreshRequest struct {
 
 func (x *RefreshRequest) Reset() {
 	*x = RefreshRequest{}
-	mi := &file_api_admin_v1_auth_proto_msgTypes[4]
+	mi := &file_admin_v1_admin_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -275,7 +275,7 @@ func (x *RefreshRequest) String() string {
 func (*RefreshRequest) ProtoMessage() {}
 
 func (x *RefreshRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_api_admin_v1_auth_proto_msgTypes[4]
+	mi := &file_admin_v1_admin_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -288,7 +288,7 @@ func (x *RefreshRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RefreshRequest.ProtoReflect.Descriptor instead.
 func (*RefreshRequest) Descriptor() ([]byte, []int) {
-	return file_api_admin_v1_auth_proto_rawDescGZIP(), []int{4}
+	return file_admin_v1_admin_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *RefreshRequest) GetRefreshToken() string {
@@ -298,11 +298,11 @@ func (x *RefreshRequest) GetRefreshToken() string {
 	return ""
 }
 
-var File_api_admin_v1_auth_proto protoreflect.FileDescriptor
+var File_admin_v1_admin_proto protoreflect.FileDescriptor
 
-const file_api_admin_v1_auth_proto_rawDesc = "" +
+const file_admin_v1_admin_proto_rawDesc = "" +
 	"\n" +
-	"\x17api/admin/v1/auth.proto\x12\fapi.admin.v1\x1a\x1cgoogle/api/annotations.proto\"~\n" +
+	"\x14admin/v1/admin.proto\x12\badmin.v1\x1a\x1cgoogle/api/annotations.proto\"~\n" +
 	"\x0fRegisterRequest\x12\x1a\n" +
 	"\busername\x18\x01 \x01(\tR\busername\x12\x1a\n" +
 	"\bpassword\x18\x02 \x01(\tR\bpassword\x12\x14\n" +
@@ -321,39 +321,39 @@ const file_api_admin_v1_auth_proto_rawDesc = "" +
 	"\rrefresh_token\x18\x02 \x01(\tR\frefreshToken\x12\x10\n" +
 	"\x03exp\x18\x03 \x01(\x03R\x03exp\"5\n" +
 	"\x0eRefreshRequest\x12#\n" +
-	"\rrefresh_token\x18\x01 \x01(\tR\frefreshToken2\x8e\x02\n" +
-	"\x04Auth\x12\\\n" +
-	"\bRegister\x12\x1d.api.admin.v1.RegisterRequest\x1a\x1b.api.admin.v1.RegisterReply\"\x14\x82\xd3\xe4\x93\x02\x0e:\x01*\"\t/register\x12P\n" +
-	"\x05Login\x12\x1a.api.admin.v1.LoginRequest\x1a\x18.api.admin.v1.LoginReply\"\x11\x82\xd3\xe4\x93\x02\v:\x01*\"\x06/login\x12V\n" +
-	"\aRefresh\x12\x1c.api.admin.v1.RefreshRequest\x1a\x18.api.admin.v1.LoginReply\"\x13\x82\xd3\xe4\x93\x02\r:\x01*\"\b/refreshB#Z!kratos-admin-demo/api/admin/v1;v1b\x06proto3"
+	"\rrefresh_token\x18\x01 \x01(\tR\frefreshToken2\xf7\x01\n" +
+	"\x05Admin\x12T\n" +
+	"\bRegister\x12\x19.admin.v1.RegisterRequest\x1a\x17.admin.v1.RegisterReply\"\x14\x82\xd3\xe4\x93\x02\x0e:\x01*\"\t/register\x12H\n" +
+	"\x05Login\x12\x16.admin.v1.LoginRequest\x1a\x14.admin.v1.LoginReply\"\x11\x82\xd3\xe4\x93\x02\v:\x01*\"\x06/login\x12N\n" +
+	"\aRefresh\x12\x18.admin.v1.RefreshRequest\x1a\x14.admin.v1.LoginReply\"\x13\x82\xd3\xe4\x93\x02\r:\x01*\"\b/refreshB\x17Z\x15admin/api/admin/v1;v1b\x06proto3"
 
 var (
-	file_api_admin_v1_auth_proto_rawDescOnce sync.Once
-	file_api_admin_v1_auth_proto_rawDescData []byte
+	file_admin_v1_admin_proto_rawDescOnce sync.Once
+	file_admin_v1_admin_proto_rawDescData []byte
 )
 
-func file_api_admin_v1_auth_proto_rawDescGZIP() []byte {
-	file_api_admin_v1_auth_proto_rawDescOnce.Do(func() {
-		file_api_admin_v1_auth_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_api_admin_v1_auth_proto_rawDesc), len(file_api_admin_v1_auth_proto_rawDesc)))
+func file_admin_v1_admin_proto_rawDescGZIP() []byte {
+	file_admin_v1_admin_proto_rawDescOnce.Do(func() {
+		file_admin_v1_admin_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_admin_v1_admin_proto_rawDesc), len(file_admin_v1_admin_proto_rawDesc)))
 	})
-	return file_api_admin_v1_auth_proto_rawDescData
+	return file_admin_v1_admin_proto_rawDescData
 }
 
-var file_api_admin_v1_auth_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
-var file_api_admin_v1_auth_proto_goTypes = []any{
-	(*RegisterRequest)(nil), // 0: api.admin.v1.RegisterRequest
-	(*RegisterReply)(nil),   // 1: api.admin.v1.RegisterReply
-	(*LoginRequest)(nil),    // 2: api.admin.v1.LoginRequest
-	(*LoginReply)(nil),      // 3: api.admin.v1.LoginReply
-	(*RefreshRequest)(nil),  // 4: api.admin.v1.RefreshRequest
+var file_admin_v1_admin_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_admin_v1_admin_proto_goTypes = []any{
+	(*RegisterRequest)(nil), // 0: admin.v1.RegisterRequest
+	(*RegisterReply)(nil),   // 1: admin.v1.RegisterReply
+	(*LoginRequest)(nil),    // 2: admin.v1.LoginRequest
+	(*LoginReply)(nil),      // 3: admin.v1.LoginReply
+	(*RefreshRequest)(nil),  // 4: admin.v1.RefreshRequest
 }
-var file_api_admin_v1_auth_proto_depIdxs = []int32{
-	0, // 0: api.admin.v1.Auth.Register:input_type -> api.admin.v1.RegisterRequest
-	2, // 1: api.admin.v1.Auth.Login:input_type -> api.admin.v1.LoginRequest
-	4, // 2: api.admin.v1.Auth.Refresh:input_type -> api.admin.v1.RefreshRequest
-	1, // 3: api.admin.v1.Auth.Register:output_type -> api.admin.v1.RegisterReply
-	3, // 4: api.admin.v1.Auth.Login:output_type -> api.admin.v1.LoginReply
-	3, // 5: api.admin.v1.Auth.Refresh:output_type -> api.admin.v1.LoginReply
+var file_admin_v1_admin_proto_depIdxs = []int32{
+	0, // 0: admin.v1.Admin.Register:input_type -> admin.v1.RegisterRequest
+	2, // 1: admin.v1.Admin.Login:input_type -> admin.v1.LoginRequest
+	4, // 2: admin.v1.Admin.Refresh:input_type -> admin.v1.RefreshRequest
+	1, // 3: admin.v1.Admin.Register:output_type -> admin.v1.RegisterReply
+	3, // 4: admin.v1.Admin.Login:output_type -> admin.v1.LoginReply
+	3, // 5: admin.v1.Admin.Refresh:output_type -> admin.v1.LoginReply
 	3, // [3:6] is the sub-list for method output_type
 	0, // [0:3] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
@@ -361,26 +361,26 @@ var file_api_admin_v1_auth_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_api_admin_v1_auth_proto_init() }
-func file_api_admin_v1_auth_proto_init() {
-	if File_api_admin_v1_auth_proto != nil {
+func init() { file_admin_v1_admin_proto_init() }
+func file_admin_v1_admin_proto_init() {
+	if File_admin_v1_admin_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_api_admin_v1_auth_proto_rawDesc), len(file_api_admin_v1_auth_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_admin_v1_admin_proto_rawDesc), len(file_admin_v1_admin_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_api_admin_v1_auth_proto_goTypes,
-		DependencyIndexes: file_api_admin_v1_auth_proto_depIdxs,
-		MessageInfos:      file_api_admin_v1_auth_proto_msgTypes,
+		GoTypes:           file_admin_v1_admin_proto_goTypes,
+		DependencyIndexes: file_admin_v1_admin_proto_depIdxs,
+		MessageInfos:      file_admin_v1_admin_proto_msgTypes,
 	}.Build()
-	File_api_admin_v1_auth_proto = out.File
-	file_api_admin_v1_auth_proto_goTypes = nil
-	file_api_admin_v1_auth_proto_depIdxs = nil
+	File_admin_v1_admin_proto = out.File
+	file_admin_v1_admin_proto_goTypes = nil
+	file_admin_v1_admin_proto_depIdxs = nil
 }
